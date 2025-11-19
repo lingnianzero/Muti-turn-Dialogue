@@ -321,20 +321,119 @@ FEMALE_NAMES: List[str] = [
     "Zoe",
 ]
 
+# 扩充常见英文名（包含大量中性名），用于统一的 500 个名字池
+ADDITIONAL_NAMES: List[str] = [
+    # A
+    "Abby", "Abel", "Abraham", "Ace", "Ada", "Adaline", "Addie", "Adeline", "Adley", "Adrianne",
+    "Afton", "Agnes", "Aidan", "Aileen", "Aimee", "Ainsley", "Alaina", "Alana", "Alani", "Alanna",
+    "Alannah", "Alayna", "Alba", "Albertina", "Aldo", "Aleah", "Alejandra", "Alejandro", "Alexandria",
+    "Alexia", "Alia", "Alina", "Alisa", "Alisha", "Alivia", "Aliyah", "Aliza", "Allie", "Alma",
+    "Alondra", "Althea", "Alton", "Alyson", "Amani", "Amari", "Amaris", "Amaya", "Amberly", "Amelie",
+    "America", "Amira", "Amiya", "Amiyah", "Anais", "Anaya", "Anderson", "Andre", "Andres", "Andy",
+    "Angelina", "Angie", "Anika", "Annabel", "Annabella", "Annabelle", "Annalise", "Antoine", "Antonia",
+    "Arden", "Arely", "Ari", "Ariadne", "Arianna", "Ariel", "Arlo", "Armani", "Artemis", "Arya",
+    "Ash", "Ashlyn", "Ashtyn", "Aspen", "Astrid", "Athena", "Aubree", "Aubri", "Aubrianna", "Audrina",
+    "August", "Aura", "Aurora", "Austen", "Avalyn", "Aviana", "Avi", "Axel",
+    # B
+    "Bailee", "Basil", "Baylee", "Beau", "Beck", "Beckett", "Belle", "Ben", "Benedict", "Bennett",
+    "Benson", "Bentley", "Berenice", "Bernard", "Bernice", "Bert", "Berta", "Bessie", "Betsy", "Betty",
+    "Billie", "Blaine", "Blaire", "Blaise", "Blanca", "Blessing", "Bodhi", "Boyd", "Braxton", "Brayden",
+    "Breanna", "Brenna", "Brenton", "Brianne", "Bria", "Bridget", "Bridger", "Briella", "Brielle",
+    "Brinley", "Bristol", "Britt", "Brook", "Brooklyn", "Brooks", "Bryant", "Bryn", "Brynlee",
+    # C
+    "Cadence", "Caiden", "Caitlin", "Caitlyn", "Cale", "Calla", "Callum", "Camden", "Camille", "Campbell",
+    "Candace", "Carlee", "Carlie", "Carlton", "Carly", "Carolina", "Carolyn", "Case", "Casey", "Cathleen",
+    "Cayden", "Cecelia", "Celeste", "Celia", "Chance", "Chandler", "Channing", "Chantal", "Charity",
+    "Charlene", "Chrissy", "Christa", "Christiana", "Christie", "Ciara", "Clare", "Clarence", "Clarissa",
+    "Clement", "Clifton", "Clyde", "Coby", "Colette", "Collin", "Colt", "Colton", "Constance", "Cora",
+    "Corbin", "Corinne", "Crysta", "Crystal", "Curtis",
+    # D
+    "Daelyn", "Dalton", "Damien", "Dane", "Danica", "Daniella", "Darcy", "Daria", "Darla", "Darnell",
+    "Darrell", "Darwin", "Deacon", "Deena", "Deja", "Delaney", "Delia", "Delilah", "Delphine", "Demetri",
+    "Derrick", "Desiree", "Dexter", "Diamond", "Dillon", "Dominique", "Dorian", "Dorothy", "Dulce",
+    "Dwayne", "Dwight",
+    # E
+    "Easton", "Elektra", "Eliana", "Elias", "Elin", "Elina", "Elisabeth", "Eliza", "Elle", "Elodie",
+    "Eloise", "Elora", "Elsa", "Elsie", "Elton", "Ember", "Emersyn", "Emilia", "Emmaline", "Enzo",
+    "Ephraim", "Esperanza", "Esteban", "Estella", "Estelle", "Everett", "Evie", "Ezekiel", "Ezra",
+    # F
+    "Farrah", "Felipe", "Fern", "Finley", "Fisher", "Flynn", "Forrest", "Francesca", "Frida", "Fritz",
+    # G
+    "Gannon", "Garrison", "Gemma", "Genesis", "Genevieve", "Gideon", "Gilbert", "Glenn", "Godfrey",
+    "Graham", "Grayson", "Grey", "Guillermo", "Gunner", "Gus", "Gwendolyn",
+    # H
+    "Hallie", "Hanna", "Harlow", "Harris", "Harvey", "Haven", "Hayley", "Heath", "Helena", "Hershel",
+    "Horace", "Houston", "Hugo",
+    # I
+    "Igor", "Imani", "Ina", "Ines", "Irma", "Isa", "Isabela", "Isabelle", "Isaias", "Ismael", "Iyla",
+    # J
+    "Jace", "Jair", "Jayce", "Jayla", "Jaylen", "Jazmine", "Jeanette", "Jefferson", "Jemima", "Jett",
+    "Jodie", "Jody", "Johanna", "Jolene", "Joni", "Juliette",
+    # K
+    "Kaia", "Kali", "Karis", "Karina", "Karla", "Karlee", "Karley", "Karly", "Karson", "Karter",
+    "Kassandra", "Katelin", "Katrina", "Kay", "Keaton", "Kennedy", "Kiana", "Kiara", "Kiera", "Kieran",
+    "Kim", "Kimber", "Kingsley", "Kinsley", "Kira", "Kori", "Kristine", "Kyla",
+    # L
+    "Laila", "Lane", "Langston", "Lara", "Layla", "Lea", "Leann", "Leanna", "Leanne", "Leighton",
+    "Leila", "Leilani", "Lena", "Leonel", "Lesley", "Libby", "Lila", "Lilian", "Lilliana", "Lillie",
+    "Livia", "Liz", "Lizbeth", "London", "Lori", "Lorraine", "Lou", "Louisa", "Louise", "Luca",
+    "Luciana", "Lynn",
+    # M
+    "Macey", "Mack", "Madalyn", "Madalynn", "Mae", "Maeve", "Magnus", "Maia", "Maisie", "Makayla",
+    "Malachi", "Marc", "Marcel", "Marcella", "Marci", "Marco", "Marcos", "Margarita", "Mariam",
+    "Mariana", "Marianne", "Marie", "Marisa", "Marisol", "Marissa", "Marjorie", "Marlene", "Marlon",
+    "Marquis", "Marshall", "Marta", "Marty", "Mathew", "Mathias", "Matilda", "Maverick", "Maxim",
+    "Maximilian", "Maya", "Mayra", "Mckenzie", "Meadow", "Meagan", "Melina", "Melody", "Mika", "Milo",
+    "Mira", "Monroe", "Monserrat", "Moriah", "Mya", "Myra",
+    # N
+    "Nadine", "Naya", "Neela", "Nehemiah", "Nevaeh", "Nico", "Nicolette", "Nigel", "Nikki", "Noe",
+    "Nova",
+    # O
+    "Obadiah", "Octavia", "Odessa", "Odin", "Omari", "Orson", "Osiris",
+    # P
+    "Paola", "Payton", "Pedro", "Petra", "Peyton", "Phoenix", "Pia", "Presley", "Preston",
+    # Q
+    "Quiana", "Quincy", "Quinlan", "Quinten", "Quinton",
+    # R
+    "Raina", "Ramon", "Rashad", "Raven", "Rayden", "Raylan", "Reagan", "Reanna", "Reece", "Regan",
+    "Remi", "Remy", "Rhema", "Rhett", "Ricardo", "Rocco", "Rogelio", "Ronan", "Ronnie", "Rosalie",
+    "Rosalind", "Rosalyn", "Rosie", "Ryder",
+    # S
+    "Sage", "Salvador", "Samara", "Serenity", "Shari", "Shea", "Shelley", "Shiloh", "Siena", "Sky",
+    "Storm", "Susanna",
+    # T
+    "Talia", "Tanner", "Tatiana", "Tate", "Tatum", "Thea", "Tiana", "Tobias", "Tucker", "Ty",
+    # U
+    "Uri", "Uriah",
+    # V
+    "Vance", "Vaughn", "Veda", "Velma", "Verna", "Violeta", "Virginia", "Vivienne",
+    # W
+    "Waylon", "Wes", "Weston", "Winston", "Winona", "Wren",
+    # X
+    "Xandra", "Xavion", "Xiomara", "Xochitl",
+    # Y
+    "Yahir", "Yana", "Yara", "Yehuda", "Youssef", "Yuna", "Yuri",
+    # Z
+    "Zadie", "Zain", "Zaire", "Zander", "Zaria", "Zion",
+]
+
+# 统一名字池：去重后按字母升序排列，保证规模为 500 个
+NAMES: List[str] = sorted(
+    dict.fromkeys(MALE_NAMES + FEMALE_NAMES + ADDITIONAL_NAMES)
+)
+if len(NAMES) < 500:
+    raise ValueError(
+        f"Name pool too small ({len(NAMES)}). Please add more names to reach 500."
+    )
+if len(NAMES) > 500:
+    NAMES = NAMES[:500]
+
 
 class NameGenerator:
-    """根据性别结果分配唯一英文名字。"""
+    """分配唯一英文名字（不区分性别，随机分配）。"""
 
-    def __init__(
-        self,
-        male_names: Iterable[str] | None = None,
-        female_names: Iterable[str] | None = None,
-    ) -> None:
-        self._male_pool = self._prepare_pool(male_names or MALE_NAMES)
-        self._female_pool = self._prepare_pool(female_names or FEMALE_NAMES)
-        neutral = list(dict.fromkeys(MALE_NAMES + FEMALE_NAMES))
-        random.shuffle(neutral)
-        self._neutral_pool: Deque[str] = deque(neutral)
+    def __init__(self, names: Iterable[str] | None = None) -> None:
+        self._pool = self._prepare_pool(names or NAMES)
         self._assigned: Dict[str, str] = {}
 
     @staticmethod
@@ -344,27 +443,17 @@ class NameGenerator:
         return deque(unique_names)
 
     def assign(self, gender_map: Dict[str, str]) -> Dict[str, str]:
-        """为每张图片分配唯一名字。"""
+        """为每个条目分配唯一名字，忽略性别信息。"""
         results: Dict[str, str] = {}
-        for filename, gender in gender_map.items():
-            gender_key = gender if gender in {"male", "female"} else None
-            results[filename] = self._next_name(gender_key)
+        for filename in gender_map.keys():
+            results[filename] = self._next_name()
         return results
 
-    def _next_name(self, gender: str | None) -> str:
-        pools: List[Deque[str]] = []
-        if gender == "male":
-            pools.append(self._male_pool)
-        elif gender == "female":
-            pools.append(self._female_pool)
-        pools.append(self._neutral_pool)
-
-        for pool in pools:
-            if pool:
-                name = pool.popleft()
-                self._assigned[name] = gender or "neutral"
-                return name
-
+    def _next_name(self) -> str:
+        if self._pool:
+            name = self._pool.popleft()
+            self._assigned[name] = "assigned"
+            return name
         raise RuntimeError("名字池已耗尽，无法继续分配。")
 
     @property
